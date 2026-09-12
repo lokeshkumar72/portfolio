@@ -42,16 +42,48 @@
       margin-left: 10px;
     }
 
+    .skill-mf {
+      margin-top: 1.5rem;
+      padding: 1.15rem 1.15rem 0.2rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.035);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(2px);
+    }
+
+    .skill-mf .title-s {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.95rem;
+      color: #f3eee8;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .skill-mf span {
+      display: inline-block;
+      margin-bottom: 0.35rem;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
     .skill-mf .progress {
-      /* background-color: #cde1f8; */
-      margin: 0.5rem 0 1.2rem;
-      border-radius: 0;
-      height: 0.7rem;
+      margin: 0 0 1rem;
+      border-radius: 999px;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.055);
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .skill-mf .progress .progress-bar {
-      height: 0.7rem;
-      background-color: #ffbd39;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255, 222, 154, 0.8) 0%, rgba(255, 189, 57, 0.9) 50%, rgba(245, 170, 0, 1) 100%);
+      box-shadow: none;
+      transition: width 0.7s ease;
     }
 
     /* Animation styles */
@@ -62,37 +94,36 @@
       color: rgb(255, 255, 255);
       overflow: hidden;
       white-space: nowrap;
-      animation: typing 3s steps(20, end) infinite;
+      display: inline-block;
+      min-height: 1.5em;
+      vertical-align: middle;
     }
 
-    #typing-animation:before {
+    #typing-animation::after {
       content: "";
-      /* position: absolute; */
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: #ccc;
-      animation: typing-cursor 0.5s ease-in-out infinite;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      margin-left: 6px;
+      background: #ffbd39;
+      vertical-align: middle;
+      animation: typing-cursor 1.2s steps(1) infinite;
+      opacity: 1;
     }
 
     @keyframes typing-cursor {
-      from {
-        width: 5px;
+      0%, 48% {
+        opacity: 1;
       }
 
-      to {
-        width: 0;
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #typing-animation::after {
+        animation: none;
       }
     }
 
@@ -109,12 +140,12 @@
 
     @media screen and (orientation: portrait) {
       body {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 0;
+        margin-right: 0;
       }
 
       .order-md-last {
-        visibility: hidden;
+        display: none;
       }
 
       .about-img img {
@@ -127,24 +158,531 @@
     }
 
     .main-area {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main-area .text {
+      flex: 1 1 55%;
+      max-width: 640px;
+      text-align: left;
+    }
+
+    .main-area > img {
+      width: min(50%, 420px);
+      max-width: 100%;
+      height: auto;
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    #home-section .one-third {
+      display: none;
+    }
+
+    #home-section .slider-text {
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    @media (min-width: 992px) {
+      #home-section .slider-text {
+        min-height: 750px;
       }
-    
-      .social-buttons{
+
+      #home-section .main-area {
+        min-height: 620px;
+        padding: 4rem 0 2rem;
+        box-sizing: border-box;
+      }
+
+      #home-section .main-area .hero-banner {
+        width: min(50%, 420px);
+        max-width: 420px;
+        height: auto;
+        flex: 0 0 auto;
+      }
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: flex-start;
+      margin-top: 1.2rem;
+    }
+
+    #typing-animation {
+      display: inline-block;
+      font-size: clamp(1.4rem, 2vw, 2.4rem);
+      line-height: 1.5;
+      min-height: 1.5em;
+      word-break: break-word;
+    }
+
+    .owl-carousel.home-slider,
+    .owl-carousel.home-slider .slider-item {
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .hero-banner {
+      display: block;
+      width: 50%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .main-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+      }
+
+      .main-area .text {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .social-buttons {
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      .hero-banner {
+        width: min(78vw, 360px);
+        margin-top: -1rem;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .owl-carousel.home-slider,
+      .owl-carousel.home-slider .slider-item {
+        height: auto !important;
+        min-height: 100vh;
+      }
+
+      .slider-text {
+        height: auto !important;
+        min-height: 100vh;
+      }
+
+      .main-area {
+        padding-top: 4rem;
+        gap: 0;
+      }
+
+      .main-area .text h1 {
+        font-size: clamp(2.3rem, 12vw, 4rem);
+        line-height: 1.08;
+      }
+
+      .subheading {
+        font-size: 1.2rem !important;
+      }
+
+      .social-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .social-buttons a {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .hero-banner {
+        width: min(84vw, 330px);
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .ftco-navbar-light .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .ftco-navbar-light .navbar-brand {
+        font-size: 1.4rem;
+      }
+
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 0.75rem 1rem 0.25rem;
+      }
+
+      .img-about .row {
         display: flex;
+        flex-direction: column;
+      }
+
+      .img-about .col-sm-6.col-md-5,
+      .img-about .col-sm-6.col-md-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .img-about .col-sm-6.col-md-5 {
+        order: 1;
+      }
+
+      .img-about .col-sm-6.col-md-7 {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .img-about .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .img-about .col-sm-6.col-md-5,
+      .img-about .col-sm-6.col-md-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .about-img {
+        width: min(42vw, 180px);
+        max-width: 160px;
+        margin: 0 auto 0.45rem;
+        transform: none;
+      }
+
+      .about-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        border-radius: 18px;
+        object-fit: cover;
+      }
+
+      .about-info {
+        margin-top: 0;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+
+      .ftco-section,
+      .ftco-about,
+      .resume-section,
+      .contact-section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .img-about img,
+      .project img,
+      .blog-entry img,
+      .resume-wrap img {
+        width: 100%;
+        height: auto;
+      }
+
+      .resume-wrap,
+      .blog-entry,
+      .project,
+      .card {
+        padding: 1rem;
+      }
+
+      .heading-section h2,
+      .heading-section h1,
+      .heading-section .subheading {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .about-img {
+        width: 100%;
+        max-width: 140px;
+        margin: 0 auto 0.4rem;
+        transform: none;
+      }
+
+      .about-img img {
+        display: block;
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        border-radius: 18px;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .img-about .row {
+        display: block;
+      }
+
+      .about-info {
+        margin-top: 0;
+      }
+
+      .main-area .text h1 {
+        margin-bottom: 0.75rem;
+      }
+
+      .main-area .text h1 span {
+        display: block;
+      }
+
+      #typing-animation {
+        white-space: normal;
+        font-size: clamp(1.2rem, 7vw, 2rem);
+        display: block;
+        line-height: 1.4;
+      }
+
+      .social-buttons a {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 6px 18px rgba(255, 189, 57, 0.12);
+      }
+
+      .social-buttons a:hover {
+        transform: translateY(-2px);
+      }
+
+      .navbar-nav .nav-item > .nav-link {
+        font-size: 0.95rem;
+      }
+
+      .main-area .text {
+        padding-right: 0;
+      }
+
+      .main-area {
         gap: 1rem;
       }
 
-      @media only screen and (max-width: 425px) {
-        .main-area{
-          flex-direction: column;
-        }
-        .social-buttons{
-        flex-direction: column;
-
-        }
+      .social-buttons a,
+      .social-buttons .btn {
+        padding: 0.72rem 0.9rem !important;
+        font-size: 0.84rem !important;
+        gap: 0.38rem;
+        max-width: 200px;
       }
+
+      .social-buttons a span,
+      .social-buttons .btn span {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .main-area .text h1 {
+        font-size: clamp(2.1rem, 14vw, 3rem);
+      }
+
+      .subheading {
+        letter-spacing: 0.12em;
+      }
+
+      .social-buttons {
+        gap: 0.75rem;
+      }
+    }
+
+    .btn,
+    .social-buttons a,
+    .social-buttons .btn {
+      border-radius: 999px !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 8px 20px rgba(255, 189, 57, 0.12);
+    }
+
+    .btn:hover,
+    .social-buttons a:hover,
+    .social-buttons .btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 14px 26px rgba(255, 189, 57, 0.2);
+      filter: brightness(1.03);
+    }
+
+    .social-buttons a,
+    .social-buttons .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1.5rem !important;
+      font-size: 0.96rem !important;
+      line-height: 1.2 !important;
+      white-space: nowrap;
+      min-width: 170px;
+      flex: 0 0 auto;
+    }
+
+    .social-buttons a span,
+    .social-buttons .btn span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      line-height: 1;
+      transform: translateY(-1px);
+      flex-shrink: 0;
+    }
+
+    .social-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-width: 170px;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      background: linear-gradient(135deg, #ffbd39, #e49b12) !important;
+      box-shadow: 0 10px 22px rgba(255, 189, 57, 0.2) !important;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .social-action span {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .social-action:hover {
+      background: linear-gradient(135deg, #ffd477, #f0aa1c) !important;
+      box-shadow: 0 15px 28px rgba(255, 189, 57, 0.3) !important;
+    }
+
+    .form-status {
+      min-height: 1.5rem;
+      margin: 0.5rem 0 0;
+      color: #ffbd39;
+      font-weight: 600;
+    }
+
+    #contact-section .ftco-footer-social {
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 767.98px) {
+      #contact-section .ftco-footer-social {
+        margin-top: 1.5rem;
+      }
+    }
+
+    #about-section .about-img {
+      width: min(100%, 220px);
+      margin: 0 auto 1rem;
+    }
+
+    #about-section .about-img img {
+      display: block;
+      width: 100%;
+      height: auto !important;
+      max-height: none;
+      aspect-ratio: 1 / 1;
+      border: 3px solid rgba(255, 189, 57, 0.72);
+      border-radius: 50% !important;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+    }
+
+    #about-section .skill-mf {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem 0.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    #about-section .skill-mf .progress {
+      height: 7px;
+      margin-bottom: 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    #about-section .skill-mf .progress .progress-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffde9a, #ffbd39, #f0a900);
+      box-shadow: 0 0 10px rgba(255, 189, 57, 0.25);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .experience-grid > [class*="col-"] {
+      display: flex;
+      width: auto;
+      max-width: none;
+      flex: none;
+      min-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .experience-grid .resume-wrap {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 767.98px) {
+      #about-section .about-img {
+        width: min(48vw, 180px);
+        margin: 0 auto 0.85rem;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .resume-wrap,
+    .blog-entry,
+    .project,
+    .card,
+    .services-1 {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (max-width: 767.98px) {
+      .social-buttons {
+        gap: 0.7rem;
+      }
+
+      .social-buttons a,
+      .social-buttons .btn {
+        width: 100%;
+        max-width: 260px;
+      }
+    }
   </style>
 </head>
 
@@ -192,11 +730,11 @@
         <!-- <div class="overlay"></div> -->
         <div class="container">
           <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-            data-scrollax-parent="true">
+            >
             <div class="one-third  order-md-last img">
               <div class="overlay"></div>
             </div>
-            <div class=" main-area ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <div class="main-area ftco-animate">
 
               <div class="text">
                 <span class="subheading">Hello!</span>
@@ -208,41 +746,83 @@
                 <span id="typing-animation"></span>
 
                 <script>
-                  // Initialize the typing animation
-                  const typingAnimationElement = document.getElementById('typing-animation');
+                  (() => {
+                    if (window.__lokeshTypingAnimationInitialized) {
+                      return;
+                    }
+                    window.__lokeshTypingAnimationInitialized = true;
 
-                  // Create an array of typing text
-                  const typingTexts = ['Software Developer     ', 'Web Developer    ', 'Graphic Designer   '];
+                    const typingAnimationElement = document.getElementById('typing-animation');
 
-                  // Create a function to display the typing animation for a given text
-                  function playTypingAnimation(text) {
-                    // Loop through each character and add it to the element
-                    for (let i = 0; i < text.length; i++) {
-                      setTimeout(() => {
-                        typingAnimationElement.textContent += text[i];
-                      }, i * 100); // Decreased delay to speed up the typing animation
+                    if (!typingAnimationElement) {
+                      return;
                     }
 
-                    // Once the animation is complete, reset the text and start over
-                    setTimeout(() => {
-                      typingAnimationElement.textContent = '';
-                      playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                    }, text.length * 100); // Adjusted delay accordingly
-                  }
+                    const typingTexts = ['Software Developer     ', 'Web Developer    ', 'Graphic Designer   '];
+                    let typingTimers = [];
+                    let resizeTimeout;
 
-                  // Start the typing animation loop
-                  playTypingAnimation(typingTexts[0]);
+                    function getTypingSettings() {
+                      return window.innerWidth <= 768
+                        ? { delay: 220, pause: 800 }
+                        : { delay: 180, pause: 900 };
+                    }
+
+                    function clearTypingTimers() {
+                      typingTimers.forEach((timerId) => clearTimeout(timerId));
+                      typingTimers = [];
+                    }
+
+                    function playTypingAnimation(text) {
+                      clearTypingTimers();
+                      typingAnimationElement.textContent = '';
+                      typingAnimationElement.style.opacity = '1';
+
+                      const { delay, pause } = getTypingSettings();
+                      let index = 0;
+
+                      const typeNextChar = () => {
+                        if (index < text.length) {
+                          typingAnimationElement.textContent += text[index];
+                          index += 1;
+                          typingTimers.push(setTimeout(typeNextChar, delay));
+                        } else {
+                          typingAnimationElement.style.opacity = '0.9';
+                          typingTimers.push(setTimeout(() => {
+                            typingAnimationElement.textContent = '';
+                            typingAnimationElement.style.opacity = '1';
+                            const nextIndex = (typingTexts.indexOf(text) + 1) % typingTexts.length;
+                            playTypingAnimation(typingTexts[nextIndex]);
+                          }, pause));
+                        }
+                      };
+
+                      typeNextChar();
+                    }
+
+                    playTypingAnimation(typingTexts[0]);
+
+                    window.addEventListener('resize', () => {
+                      clearTimeout(resizeTimeout);
+                      resizeTimeout = setTimeout(() => {
+                        const currentText = typingAnimationElement.textContent || typingTexts[0];
+                        playTypingAnimation(currentText.trim() ? currentText : typingTexts[0]);
+                      }, 150);
+                    }, { passive: true });
+                  })();
                 </script><br><br>
                 <!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
                 <!-- <br> -->
                 <p class="social-buttons">
-                  <a href="https://www.instagram.com/thakur_lokesh_jadon/" class="btn btn-primary py-3 px-4">My
-                    Instagram</a>
-                  <a href="https://www.linkedin.com/in/lokesh-kumar-singh-57b5851b8/"
-                    class="btn btn-primary py-3 px-4">My LinkedIn</a>
+                  <a href="https://www.instagram.com/thakur_lokesh_jadon/" class="btn btn-primary py-3 px-4">
+                    <span class="icon-instagram"></span> Instagram
+                  </a>
+                  <a href="https://www.linkedin.com/in/lokesh-kumar-singh-57b5851b8/" class="btn btn-primary py-3 px-4">
+                    <span class="icon-linkedin"></span> LinkedIn
+                  </a>
                 </p>
               </div>
-              <img style="width: 50%;" src="./images/banner.png" alt="cover">
+              <img class="hero-banner" src="./images/banner.png" alt="cover">
 
             </div>
           </div>
@@ -343,10 +923,12 @@
                 <h1 class="big">About</h1>
                 <h2 class="mb-4">About Me</h2>
 
-                <p>Adobe ColdFusion developer at Arosys Technologies, proficient in PHP, jQuery AJAX, and skilled in
-                  crafting visually appealing webpages using HTML, CSS, Tailwind, Bootstrap, and Material UI.
-                  Well-versed in Python, C++, C, and Java, with a solid foundation in SQL. Eager to contribute to
-                  innovative web development projects.</p>
+                <p>Passionate Full-Stack Developer proficient in JavaScript, React.js, Node.js, Express.js, and MongoDB,
+                  with hands-on experience building responsive and user-friendly web applications. Skilled in crafting
+                  visually appealing webpages using HTML, CSS, Tailwind CSS, Bootstrap, and modern UI practices.
+                  Experienced in REST APIs, Firebase authentication, database integration, and Git/GitHub. Familiar with
+                  Java, C++, C, and Python, with a solid foundation in SQL. Eager to contribute to innovative web
+                  development projects while continuously learning and growing as a software developer.</p>
                 <ul class="about-info mt-4 px-md-0 px-2">
                   <li class="d-flex">
                     <span>Profile:</span>
@@ -385,7 +967,8 @@
                 <!-- <p class="mb-4"> <span class="number" data-number="30">0</span> <span>+</span> <span>&nbsp; Projects completed</span> </p> -->
                 <p>
                   <a href="https://www.linkedin.com/in/lokesh-kumar-singh-57b5851b8/"
-                    class="btn btn-primary py-3 px-3">LinkedIn</a>
+                    class="btn btn-primary py-3 px-3 social-action"><span class="icon-linkedin" aria-hidden="true"></span>
+                    LinkedIn</a>
                 </p>
               </div>
             </div>
@@ -401,10 +984,8 @@
         <div class="col-md-10 heading-section text-center ftco-animate">
           <h1 class="big big-2">Resume</h1>
           <h2 class="mb-4">Resume</h2>
-          <p>Experienced Adobe ColdFusion Developer at Arosys Technologies, proficient in PHP and skilled in jQuery
-            AJAX. Specialized in crafting visually appealing webpages using HTML, CSS, Tailwind, Bootstrap, and Material
-            UI. Possesses a strong foundation in Python, C++, C, and Java, with expertise in SQL. Eager to apply
-            expertise to drive innovative web development projects forward.</p>
+          <p>Experienced Full-Stack Developer proficient in JavaScript, React.js, Node.js, Express.js, and MongoDB, with hands-on experience developing responsive and user-friendly web applications. Skilled in crafting visually appealing interfaces using HTML, CSS, Tailwind CSS, Bootstrap, and Material UI. Proficient in REST APIs, Firebase, authentication, database integration, and Git/GitHub. Possesses a strong foundation in Python, C++, C, Java, and SQL. Eager to apply technical expertise to contribute to innovative web development projects and deliver scalable, high-quality solutions.
+</p>
         </div>
       </div>
 
@@ -414,19 +995,23 @@
       </div>
       <br>
 
-      <div class="row">
+      <div class="row experience-grid">
         <div class="col-md-6">
           <div class="resume-wrap ftco-animate">
-            <span class="date">2024-Present</span>
-            <h2>Software Developer</h2>
-            <span class="position">Arosys</span>
-            <p class="mt-4">Arosys Technologies, a top US-based software company, specializes in web apps, e-Learning,
-              media, and design. We craft custom software solutions to enhance functionality and productivity across
-              industries.
-            <ul>
-              <li>Working in developement of applications based on Adobe coldfusion and Jquery/Javascript.</li>
-              <li>Experience of working in Microsoft Sql Server.</li>
-              <!-- <li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li> -->
+           <span class="date">Sep 2024 – Jun 2025</span>
+
+<h2>MERN Stack Development Intern</h2>
+<span class="position">CETPA Infotech Pvt. Ltd.</span>
+
+<p class="mt-4">
+  Completed a hands-on MERN Stack Development internship, gaining practical experience in frontend development, backend development, database management, and API integration.
+
+<ul>
+  <li>Developed a task management application with user authentication and database integration using Node.js and MongoDB.</li>
+  <li>Implemented application functionality with a focus on usability, data management, and responsive web development.</li>
+  <li>Successfully completed the internship and received a certificate of completion for demonstrating proficiency and dedication.</li>
+</ul>
+
             </ul>
             </p>
           </div>
@@ -435,15 +1020,22 @@
 
         <div class="col-md-6">
           <div class="resume-wrap ftco-animate">
-            <span class="date">2021-Present</span>
-            <h2>Freelancer Sketch Artist</h2>
-            <span class="position">ig/anurag.sketches</span>
-            <p class="mt-4">Freelance artist specializing in paid graphite and charcoal portraits. Self-taught and
-              experienced in creating custom artwork. Find my portfolio on Instagram - @anurag.sketches
-            <ul>
-              <li>Researching market trends to meet client demands.</li>
-              <li>Offering personalized art workshops for aspiring artists.</li>
-              <li>Collaborating with galleries to showcase my work.</li>
+  <span class="date">Aug 2023</span>
+
+<h2>Web Development Intern</h2>
+<span class="position">Skill Intern India</span>
+
+<p class="mt-4">
+  Completed a Web Development internship focused on building responsive websites using HTML, CSS, and JavaScript. Gained practical experience in  version control, debugging, and code optimization.
+</p>
+
+<ul>
+  <li>Designed and deployed a responsive portfolio website using HTML, CSS, and JavaScript.</li>
+  <li>Designed and deployed a responsive restaurant website using HTML, CSS, and JavaScript.</li>
+  <li>Utilized Git and GitHub for version control and collaborated with peers to debug and optimize code.</li>
+  <li>Earned a certification for demonstrating proficiency and dedication during the internship.</li>
+</ul>
+
 
             </ul>
             </p>
@@ -467,7 +1059,7 @@
             <span class="date">2021-2025</span>
             <h2>B.tech (CSE)</h2>
             <span class="position">G.l Bajaj Institute Of Technology & Management (AKTU) </span>
-            <p class="mt-4">Grade: 7.8 (CGPA)</p>
+            <p>Grade: 6.20 (CGPA)</p>
           </div>
         </div>
         <div class="col-md-6">
@@ -475,17 +1067,19 @@
             <span class="date">2018-2021</span>
             <h2>Diploma (Computer Science & Engineering) </h2>
             <span class="position">Galgotias University</span>
-            <p class="mt-4">Grade: 7.5(CGPA)</p>
+            <p>Grade: 7.5(CGPA)</p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="resume-wrap ftco-animate">
-          <span class="date">2015-2016</span>
-          <h2>Secondary Education </h2>
-          <span class="position">St. Aerjay Public School (CBSE)</span>
-          <p class="mt-4">Grade: 6.8(CGPA)</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="resume-wrap ftco-animate">
+            <span class="date">2015-2016</span>
+            <h2>Secondary Education </h2>
+            <span class="position">St. Aerjay Public School (CBSE)</span>
+            <p>Grade: 6.8(CGPA)</p>
+          </div>
         </div>
       </div>
     </div>
@@ -493,8 +1087,8 @@
     <div class="row justify-content-center mt-5">
       <div class="col-md-6 text-center ftco-animate">
         <p>
-          <a href="https://drive.google.com/file/d/1cfQoHchEqDQLkN0IlwrapDMoP10Nv6lc/view?usp=sharing"
-            class="btn btn-primary py-4 px-5">Download CV</a>
+          <a href="https://drive.google.com/file/d/1rgWIcpwMG6i0oTRkgKyT7EjxxaJRT6wS/view?usp=drive_link"
+            class="btn btn-primary py-4 px-5" target="_blank" rel="noopener">Download CV</a>
         </p>
       </div>
     </div>
@@ -533,7 +1127,8 @@
       <div class="row justify-content-center">
         <div class="col-md-7 ftco-animate text-center">
           <h2>Here's my<span>
-              <button id="gitbtn" class="btn btn-primary py-3 px-5" onclick="gitClick()">GitHub</button>
+              <button id="gitbtn" class="btn btn-primary py-3 px-5 social-action" onclick="gitClick()"><span class="icon-github"
+                  aria-hidden="true"></span> GitHub</button>
             </span>
           </h2>
           <div class="heading">
@@ -597,8 +1192,8 @@
             </div>
             <h3 class="mb-4">Download Resume</h3>
             <p>
-              <a href="https://drive.google.com/file/d/1cfQoHchEqDQLkN0IlwrapDMoP10Nv6lc/view?usp=sharing">Resume
-                link</a>
+              <a href="https://drive.google.com/file/d/1rgWIcpwMG6i0oTRkgKyT7EjxxaJRT6wS/view?usp=drive_link"
+                target="_blank" rel="noopener">Resume link</a>
             </p>
           </div>
         </div>
@@ -613,13 +1208,13 @@
                 </span>
               </h2>
               <div class="que" id="send-message">
-                <form action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="53850583-f0df-4410-b578-7dcc38204284">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                  <input type="hidden" name="access_key" value="cc6b6ec4-fc42-4414-ae75-8b6f89cc1dd4">
                   <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                     <div class="col-12">
                       <label for="fullname" class="form-label">Full Name
                         <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="fullname" name="fullname" value=""
+                      <input type="text" class="form-control" id="fullname" name="name" value=""
                         required="required">
                     </div>
                     <div class="col-12 col-md-6">
@@ -662,18 +1257,20 @@
                     </div>
                     <div class="col-12">
                       <div class="d-grid"><br>
-                        <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+                        <button class="btn btn-primary btn-lg" type="submit"><span class="icon-envelope"
+                            aria-hidden="true"></span> Send Message</button>
                       </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="form-status" id="form-status" aria-live="polite"></p>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-          <br>
           <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-            <li class="ftco-animate normal-txt">Find me on
-            </li>
+            <li class="ftco-animate normal-txt">Find me on</li>
             <!-- <li class="ftco-animate"> <a href="https://www.youtube.com/@RishabhMishraOfficial"> <span class="icon-youtube"></span></a> </li> -->
             <li class="ftco-animate">
               <a href="https://www.linkedin.com/in/lokesh-kumar-singh-57b5851b8/">
@@ -689,7 +1286,6 @@
                 <span class="icon-instagram"></span></a>
             </li>
           </ul>
-          <br>
         </div>
       </div>
   </section>
@@ -740,6 +1336,67 @@
 
   <script src="js/main.js"></script>
   <script>
+    (() => {
+      const experienceCards = [...document.querySelectorAll('.experience-grid .resume-wrap')];
+
+      function equalizeExperienceCards() {
+        experienceCards.forEach((card) => {
+          card.style.minHeight = '';
+        });
+
+        if (window.innerWidth > 767 || experienceCards.length < 2) {
+          return;
+        }
+
+        const tallestHeight = Math.max(...experienceCards.map((card) => card.getBoundingClientRect().height));
+        experienceCards.forEach((card) => {
+          card.style.minHeight = `${tallestHeight}px`;
+        });
+      }
+
+      equalizeExperienceCards();
+      window.addEventListener('resize', equalizeExperienceCards, { passive: true });
+    })();
+
+    (() => {
+      const contactForm = document.getElementById('contact-form');
+      const formStatus = document.getElementById('form-status');
+
+      if (!contactForm || !formStatus) {
+        return;
+      }
+
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        formStatus.textContent = 'Sending message...';
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || 'Message could not be sent.');
+          }
+
+          contactForm.reset();
+          formStatus.textContent = 'Message sent successfully. The form has been cleared.';
+        } catch (error) {
+          formStatus.textContent = error.message || 'Unable to send the message. Please try again.';
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+    })();
+
     function gitClick() {
       window.location.href = 'https://github.com/lokeshkumar72';
     }
