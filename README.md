@@ -98,7 +98,7 @@ For a better development experience, you can use **VS Code Live Server**.
 Add your homepage screenshot here:
 
 ```markdown
-![Portfolio Homepage](images/homepage.png.png)
+![Portfolio Homepage](images/homepage.png)
 ```
 
 ### 👨‍💻 About
