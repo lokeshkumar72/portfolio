@@ -16,27 +16,27 @@ The website is designed with a clean, modern, and responsive interface to provid
 
 ## ✨ Features
 
-* 🎨 Clean and modern UI
-* 📱 Fully responsive design
-* 👨‍💻 About Me section
-* 🛠️ Skills and technologies
-* 💼 Education and experience
-* 🚀 Featured projects
-* 📄 Resume section
-* 📬 Contact section
-* 🔗 GitHub and LinkedIn links
-* ⚡ Fast and lightweight static website
+- 🎨 Clean and modern UI
+- 📱 Fully responsive design
+- 👨‍💻 About Me section
+- 🛠️ Skills and technologies
+- 💼 Education and experience
+- 🚀 Featured projects
+- 📄 Resume section
+- 📬 Contact section
+- 🔗 GitHub and LinkedIn links
+- ⚡ Fast and lightweight static website
 
 ---
 
 ## 🛠️ Technologies Used
 
-* **HTML5** — Website structure
-* **CSS3** — Styling and responsive design
-* **JavaScript** — Interactive functionality
-* **SCSS** — Maintainable CSS styling
-* **Bootstrap / CSS Libraries** — UI components and layout
-* **Git & GitHub** — Version control and project management
+- **HTML5** — Website structure
+- **CSS3** — Styling and responsive design
+- **JavaScript** — Interactive functionality
+- **SCSS** — Maintainable CSS styling
+- **Bootstrap / CSS Libraries** — UI components and layout
+- **Git & GitHub** — Version control and project management
 
 ---
 
@@ -98,7 +98,7 @@ For a better development experience, you can use **VS Code Live Server**.
 Add your homepage screenshot here:
 
 ```markdown
-![Portfolio Homepage](images/homepage.png)
+![Portfolio Homepage](images/homepage.png.png)
 ```
 
 ### 👨‍💻 About
@@ -119,12 +119,12 @@ Add your homepage screenshot here:
 
 I created this portfolio to showcase my:
 
-* Frontend development skills
-* Full Stack development experience
-* Personal and academic projects
-* Technical knowledge
-* Problem-solving abilities
-* Professional experience
+- Frontend development skills
+- Full Stack development experience
+- Personal and academic projects
+- Technical knowledge
+- Problem-solving abilities
+- Professional experience
 
 It also serves as a central place for recruiters and developers to learn more about my work.
 
@@ -140,20 +140,20 @@ I enjoy working with technologies such as **JavaScript, React.js, Node.js, Expre
 
 ## 🔗 Connect With Me
 
-* 💼 **LinkedIn:** [Lokesh Kumar Singh](https://www.linkedin.com/in/lokesh-kumar-singh-/)
-* 🐙 **GitHub:** [lokeshkumar72](https://github.com/lokeshkumar72)
+- 💼 **LinkedIn:** [Lokesh Kumar Singh](https://www.linkedin.com/in/lokesh-kumar-singh-/)
+- 🐙 **GitHub:** [lokeshkumar72](https://github.com/lokeshkumar72)
 
 ---
 
 ## 📌 Future Improvements
 
-* [ ] Add more full-stack projects
-* [ ] Improve animations and interactions
-* [ ] Add downloadable resume
-* [ ] Add project live demos
-* [ ] Improve accessibility
-* [ ] Add dark/light mode
-* [ ] Add contact form functionality
+- [ ] Add more full-stack projects
+- [ ] Improve animations and interactions
+- [ ] Add downloadable resume
+- [ ] Add project live demos
+- [ ] Improve accessibility
+- [ ] Add dark/light mode
+- [ ] Add contact form functionality
 
 ---
 
