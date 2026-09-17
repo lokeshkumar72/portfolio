@@ -98,19 +98,7 @@ For a better development experience, you can use **VS Code Live Server**.
 Add your homepage screenshot here:
 
 ```markdown
-![Portfolio Homepage](/images/homepage.png)
-```
-
-### 👨‍💻 About
-
-```markdown
-![About Section](images/about.png)
-```
-
-### 🚀 Projects
-
-```markdown
-![Projects Section](images/projects.png)
+![Portfolio Homepage](./images/homepage.png)
 ```
 
 ---
