@@ -70,6 +70,14 @@
 	    event.preventDefault();
 
 	    var href = $.attr(this, 'href');
+	    var $nav = $('#ftco-nav');
+
+	    // Close the collapsed navigation before moving to the selected section.
+	    // This has no visible effect on desktop, where the menu is always shown.
+	    if ($nav.hasClass('show')) {
+	      $nav.collapse('hide');
+	      $('.js-fh5co-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+	    }
 
 	    $('html, body').animate({
 	        scrollTop: $($.attr(this, 'href')).offset().top - 70
